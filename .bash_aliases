@@ -2,8 +2,18 @@
 # run sybase central
 alias sybc='~/bin/sybase/shared/sybcentral600/scjview.sh &'
 
-# alias for Markdown
+# aliases for Markdown
 alias md='perl /home/richs/bin/Markdown/Markdown.pl'
+
+f_panpdf() {
+    pandoc -V geometry:margin=1in \
+    --variable date:"`date '+%A, %B %d, %Y'`" \
+    -o $1.pdf $1.md
+}
+alias panpdf=f_panpdf
+
+# ipython alias
+alias ipy='~/ipy.sh'
 
 # aliases to get to folders
 alias projects='cd /mnt/hc/Shares/HIT/hitis-dev/projects'
@@ -12,6 +22,10 @@ alias database='cd /mnt/hc/Shares/HIT/hitis-dev/database'
 alias staff='cd /mnt/hc/Shares/HIT/hitis-dev/staff'
 alias sybadmin='cd /mnt/hc/Shares/HIT/hitis-dev/projects/HIT_Sybase_ASE/administration'
 alias pdrive='cd /mnt/hc/richs'
+alias workspace='cd ~/Documents/workspace'
+alias webdev='cd /mnt/hc/Shares/HIT/webdev'
+
+alias wttr='curl wttr.in/"East Lansing,MI"?m'
 
 # sync Podcasts to Huawei phone
 alias podto='rsync -rWv --ignore-existing --delete ~/Music/Podcast/ /media/4619-15E7/Music/Podcast'

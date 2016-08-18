@@ -57,13 +57,13 @@ fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+#case "$TERM" in
+#xterm*|rxvt*)
+#    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+#    ;;
+#*)
+#    ;;
+#esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -122,18 +122,24 @@ if [ -f /home/richs/bin/sybase/SYBASE.sh ]; then
     . /home/richs/bin/sybase/SYBASE.sh
 fi
 
+# PYTHON
+# for sybpydb
+export PYTHONPATH=$SYBASE/$SYBASE_OCS/python/python26_64r/lib:$PYTHONPATH
+
 # JAVA
-#export JAVA_HOME=/usr
-export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+# Java 7
+#export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+# Java 8
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 
 # jConnect classpath
-export SYBASE_JDBC_CP=/home/richs/bin/classes/jdbc/jconn3.jar
+export SYBASE_JDBC_CP=/home/richs/bin/classes/jdbc/jconn4.jar
 
 # jTDS classpath
 export JTDS_JDBC_CP=/home/richs/bin/classes/jdbc/jtds-1.3.1.jar
 
 # GROOVY 
-export GROOVY_HOME=/home/richs/bin/groovy-2.0.5
+export GROOVY_HOME=/home/richs/bin/groovy-2.4.6
 
 # GRAILS
 #export GRAILS_HOME=/home/richs/bin/grails
@@ -148,9 +154,12 @@ export ANT_HOME=/home/richs/bin/ant
 export M2_HOME=/home/richs/bin/maven
 export M2=/$M2_HOME/bin
 
+# GRADLE
+export GRADLE_HOME=/home/richs/bin/gradle-2.12
+
 # JETTY
 export JETTY_HOME=/home/richs/bin/jetty
-export JETTY_CP=$JETTY_HOME/lib/jetty-annotations-9.0.6.v20130930.jar:$JETTY_HOME/lib/jetty-client-9.0.6.v20130930.jar:$JETTY_HOME/lib/jetty-continuation-9.0.6.v20130930.jar:$JETTY_HOME/lib/jetty-deploy-9.0.6.v20130930.jar:$JETTY_HOME/lib/jetty-http-9.0.6.v20130930.jar:$JETTY_HOME/lib/jetty-io-9.0.6.v20130930.jar:$JETTY_HOME/lib/jetty-jaas-9.0.6.v20130930.jar:$JETTY_HOME/lib/jetty-jmx-9.0.6.v20130930.jar:$JETTY_HOME/lib/jetty-jndi-9.0.6.v20130930.jar:$JETTY_HOME/lib/jetty-plus-9.0.6.v20130930.jar:$JETTY_HOME/lib/jetty-proxy-9.0.6.v20130930.jar:$JETTY_HOME/lib/jetty-rewrite-9.0.6.v20130930.jar:$JETTY_HOME/lib/jetty-security-9.0.6.v20130930.jar:$JETTY_HOME/lib/jetty-server-9.0.6.v20130930.jar:$JETTY_HOME/lib/jetty-servlet-9.0.6.v20130930.jar:$JETTY_HOME/lib/jetty-servlets-9.0.6.v20130930.jar:$JETTY_HOME/lib/jetty-util-9.0.6.v20130930.jar:$JETTY_HOME/lib/jetty-webapp-9.0.6.v20130930.jar:$JETTY_HOME/lib/jetty-xml-9.0.6.v20130930.jar:$JETTY_HOME/lib/servlet-api-3.0.jar
+export JETTY_CP=$JETTY_HOME/lib/jetty-annotations-9.3.6.v20151106.jar:$JETTY_HOME/lib/jetty-client-9.3.6.v20151106.jar:$JETTY_HOME/lib/jetty-continuation-9.3.6.v20151106.jar:$JETTY_HOME/lib/jetty-deploy-9.3.6.v20151106.jar:$JETTY_HOME/lib/jetty-http-9.3.6.v20151106.jar:$JETTY_HOME/lib/jetty-io-9.3.6.v20151106.jar:$JETTY_HOME/lib/jetty-jaas-9.3.6.v20151106.jar:$JETTY_HOME/lib/jetty-jmx-9.3.6.v20151106.jar:$JETTY_HOME/lib/jetty-jndi-9.3.6.v20151106.jar:$JETTY_HOME/lib/jetty-plus-9.3.6.v20151106.jar:$JETTY_HOME/lib/jetty-proxy-9.3.6.v20151106.jar:$JETTY_HOME/lib/jetty-rewrite-9.3.6.v20151106.jar:$JETTY_HOME/lib/jetty-security-9.3.6.v20151106.jar:$JETTY_HOME/lib/jetty-server-9.3.6.v20151106.jar:$JETTY_HOME/lib/jetty-servlet-9.3.6.v20151106.jar:$JETTY_HOME/lib/jetty-servlets-9.3.6.v20151106.jar:$JETTY_HOME/lib/jetty-util-9.3.6.v20151106.jar:$JETTY_HOME/lib/jetty-webapp-9.3.6.v20151106.jar:$JETTY_HOME/lib/jetty-xml-9.3.6.v20151106.jar:$JETTY_HOME/lib/servlet-api-3.0.jar
 
 # AquaData Studio
 export ADS_HOME=/home/richs/datastudio
@@ -158,7 +167,7 @@ export ADS_HOME=/home/richs/datastudio
 export SQLITE_HOME=/home/richs/bin/sqlite
 
 # SAXON
-export SAXON_HOME=/home/richs/bin/saxon
+export SAXON_HOME=/home/richs/bin/SaxonHE9-6-0-7J
 
 # HSQLDB
 export HSQLDB_HOME=/home/richs/bin/hsqldb
@@ -175,7 +184,7 @@ export CVSROOT=richs@hitrepo1.hc.msu.edu:/var/cvs
 export PS1="\W : "
 
 # set PROMPT_COMMAND so that it is displayed in Gnome terminal title
-PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
 
 # DOCBOOK ENVIRONMENTAL VARIABLES
 # these are references in documentation build files 
@@ -190,4 +199,7 @@ export DEFAULT_DOC=none
 # CLASSPATH
 export CLASSPATH=./:$SYBASE_JDBC_CP:$JTDS_JDBC_CP:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$HOME/bin/classes/mail/mail.jar:$XALAN_HOME/xalan.jar:$XALAN_HOME/serializer.jar:$XALAN_HOME/xml-apis.jar:$XALAN_HOME/xercesImpl.jar:$JETTY_CP:$SAXON_HOME/saxon9he.jar:$HSQLDB_LIB/hsqldb.jar
 # PATH
-export PATH=/usr/local/bin:~/bin:$SYBASE_OCS/bin:$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$GROOVY_HOME/bin:$ANT_HOME/bin:$ADS_HOME:$M2:$SQLITE_HOME:~/elisp:$PATH
+export PATH=/usr/local/bin:~/bin:$SYBASE_OCS/bin:$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$GROOVY_HOME/bin:$ANT_HOME/bin:$ADS_HOME:$M2:$SQLITE_HOME:~/elisp:$GRADLE_HOME/bin:$PATH
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
