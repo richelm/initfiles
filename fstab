@@ -12,4 +12,5 @@ UUID=6b5b6407-5463-4ae3-869b-c5e050745c1c none            swap    sw            
 
 //hc.msu.edu/Shares/HIT       /media/hitshares	cifs    credentials=/home/richs/.smbcredentials,iocharset=utf8,sec=ntlm 0 0
 //hc.msu.edu/users/HIT/richs    /media/hitusers/richs cifs	credentials=/home/richs/.smbcredentials,iocharset=utf8,sec=ntlm 0 0
-
+# TE home folder (aka H: drive)
+//educ-srvfpspro.campusad.msu.edu/richs$        /media/hdrive   cifs    credentials=CREDENTIAL_PATH/FILE,uid=richs,gid=sambashare,iocharset=utf8
