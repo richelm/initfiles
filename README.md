@@ -1,2 +1,3 @@
 # initfiles
-Repository for applications initialization files.
+
+Repository for OS, shell, and application initialization files.
