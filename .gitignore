@@ -1,0 +1,33 @@
+# compiled source
+# ---------------
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+#
+# backup files
+# ---------------
+*.bak
+*.*~
+*.*#
+#
+# generated files
+# ---------------
+*.pdf
+*.html
+.ipynb_checkpoints
+*.odt
+#
+# image files
+# -----------
+*.jpg
+#
+# data files
+# ----------
+*.xls
+*.xlsx
+#*.csv
+*.db
+*.tsv
