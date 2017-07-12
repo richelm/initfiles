@@ -28,6 +28,9 @@ $ENV:DBPRO = "EDUC-SRVSQL2PRO.CAMPUSAD.MSU.EDU"
 # set directory to TE
 function te { set-location C:\Users\richs\Documents\TE }
 
+# set directory to $home
+function home { set-location $home }
+
 # set prompt to current directory name
 function prompt {
   $p = Split-Path -leaf -path (Get-Location)
@@ -46,4 +49,3 @@ set-alias vim "C:\Program Files (x86)\Vim\vim80\.\vim.exe"
 set-alias e "C:\Program Files (x86)\Notepad++\notepad++"
 set-alias ll "ls"
 set-alias csc "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe"
-
